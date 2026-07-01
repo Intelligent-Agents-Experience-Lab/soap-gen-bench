@@ -1,0 +1,21 @@
+# Core ML
+torch
+transformers
+peft
+accelerate
+sentence-transformers
+rank-bm25
+
+# MLflow tracking (replaces LangSmith)
+mlflow>=2.14.0
+
+# Dataset
+datasets
+tqdm
+
+# Evaluation metrics
+evaluate
+bert-score
+
+# Fine-tuning (Phase 3 — Colab only)
+# unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
