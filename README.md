@@ -426,21 +426,3 @@ For gated models, accept the licence at huggingface.co then run `huggingface-cli
 
 All generator models run **locally**. Only the judge calls the OpenAI API.
 
-**Automatic VRAM fallback:** `ModelManager` tries standard fp16 loading first. If the model exceeds GPU memory (CUDA OOM), it automatically retries via [AirLLM](https://github.com/lyogavin/airllm), which loads layers one at a time and can run any model size on a 4 GB+ GPU at reduced throughput. The LLMs (7–8 B) will typically trigger this on cards with ≤ 6 GB VRAM.
-
----
-
-## Paper
-
-The manuscript is in `writeup/`. Build with XeLaTeX (requires `fontspec`/Arial — `pdflatex` will fail):
-
-```bash
-cd writeup
-xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
-```
-
-Regenerate all figures from the data constants in the script:
-
-```bash
-python writeup/figures/generate_all_figures.py
-```
