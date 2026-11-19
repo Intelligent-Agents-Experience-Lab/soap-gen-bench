@@ -1,3 +1,9 @@
+"""Shared settings for the exploratory phase modules (prompts, rag, models, tracking, phase*.py).
+
+The held-out revision code (experiments/revision_*.py, aci_*.py, jev_*.py) reads its settings from
+revision/protocol/config.json and config_aci.json instead. API keys come from the .env file at the
+repository root and are never stored in code.
+"""
 import os
 from pathlib import Path
 
@@ -33,7 +39,8 @@ CROSS_DATASETS: dict[str, str] = {
     "rhyliieee_soap":    "rhyliieee/soap-convo-v2",
 }
 
-# OpenAI judge (used for all LLM-as-judge calls)
+# OpenAI judge for the exploratory Phase 1 correctness score (phase1.py). The historical Phase 2 and
+# Phase 3 scores were produced by other judges outside this package (see Supplemental Article S1, B.1).
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 OPENAI_JUDGE_MODEL = os.environ.get("OPENAI_JUDGE_MODEL", "gpt-4o-mini")   # Phase 1 correctness
 PHASE2_JUDGE_MODEL = os.environ.get("PHASE2_JUDGE_MODEL", OPENAI_JUDGE_MODEL)  # Phase 2/3 RAGAS

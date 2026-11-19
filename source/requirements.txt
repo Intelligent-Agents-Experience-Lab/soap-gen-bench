@@ -1,21 +1,26 @@
-# Core ML
-torch
-transformers
-peft
-accelerate
-sentence-transformers
-rank-bm25
+# Held-out evaluation and ACI-BENCH replication (versions used for the reported runs)
+torch==2.6.0
+transformers==4.57.6
+peft==0.14.0
+bitsandbytes==0.50.2
+accelerate==1.13.0
+datasets==3.6.0
+sentence-transformers==3.2.1
+rank-bm25==0.2.2
+lm-format-enforcer==0.11.3
+openai==2.41.0
+python-dotenv==1.2.2
+numpy==2.4.6
+scipy==1.17.1
+rouge-score==0.1.2
+matplotlib==3.10.9
+openpyxl
 
-# MLflow tracking (replaces LangSmith)
+# Exploratory phase modules only (phase1/2/3.py, tracking, metrics)
 mlflow>=2.14.0
-
-# Dataset
-datasets
 tqdm
-
-# Evaluation metrics
 evaluate
 bert-score
-
-# Fine-tuning (Phase 3 — Colab only)
+nltk
+# Phase 3 LoRA training (models/finetune.py) ran on Colab with Unsloth:
 # unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
